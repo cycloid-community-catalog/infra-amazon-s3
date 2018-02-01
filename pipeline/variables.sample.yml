@@ -1,0 +1,14 @@
+env: ($ environment $)
+terraform_storage_access_key: ...
+terraform_storage_secret_key: ...
+terraform_storage_bucket_name: s3-terraform-remote-state
+terraform_storage_bucket_path: s3/($ environment $)
+aws_access_key: ...
+aws_secret_key: ...
+aws_default_region: eu-west-1
+
+s3_config_git_repository: git@github.com:MyUser/config-s3.git
+s3_config_git_branch: master
+s3_config_git_private_key: |-
+  -----BEGIN RSA PRIVATE KEY-----
+  -----END RSA PRIVATE KEY-----
