@@ -1,0 +1,11 @@
+module "s3" {
+  source = "module-s3"
+
+  env                      = "($ environment $)"
+  bucket_name              = "<bucket name>"
+  #vpc_id                   = "<vpc-id>"
+
+  #project = "<project name>"
+  #bucket_acl = "<acl private (default) or public>"
+  #versioning_enabled = "<enable object versioning>"
+}

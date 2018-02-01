@@ -1,0 +1,15 @@
+# Configuration of the CI pipeline
+pipeline:
+  pipeline:
+    path: 'pipeline/s3.yml'
+  variables:
+    path: 'pipeline/variables.sample.yml'
+
+# Configuration of ansible for provisionning
+ansible: {}
+
+# Configuration of terraform to setup the infrastructure
+terraform:
+  s3:
+    path: 'terraform/s3.tf.sample'
+    destination: 'terraform/s3/($ environment $)/s3.tf'
