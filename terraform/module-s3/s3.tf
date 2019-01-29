@@ -12,29 +12,31 @@ resource "aws_s3_bucket" "s3" {
     enabled = "${var.versioning_enabled}"
   }
 
-  #lifecycle_rule {
-  #  prefix  = "*"
-  #  enabled = true
-  #  noncurrent_version_expiration {
-  #    days = 14
-  #  }
-  #}
-
   tags {
-    engine  = "cycloid.io"
-    role    = "s3"
-    Name    = "${var.bucket_name}"
-    env     = "${var.env}"
-    project = "${var.project}"
+    Name       = "${var.customer}-${var.project}-s3-${var.env}"
+    client     = "${var.customer}"
+    env        = "${var.env}"
+    project    = "${var.project}"
+    cycloid.io = "true"
   }
 }
+
+#
+# IAM
+#
 
 data "aws_iam_policy_document" "s3_access" {
   statement {
     actions = [
+      "s3:DeleteObject",
+      "s3:GetObject",
+      "s3:GetObjectAcl",
       "s3:ListBucket",
-      "s3:ListBucketVersions",
-      "s3:GetBucketVersioning",
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:AbortMultipartUpload",
+      "s3:GetObjectVersion",
+      "s3:PutObjectVersionAcl",
     ]
 
     effect = "Allow"

@@ -1,5 +1,5 @@
 resource "aws_iam_user" "s3" {
-  name = "${var.bucket_name}"
+  name = "s3-${var.project}-${var.env}"
   path = "/"
 }
 
@@ -8,14 +8,7 @@ resource "aws_iam_access_key" "s3" {
 }
 
 resource "aws_iam_policy_attachment" "s3_access" {
-  name  = "${var.bucket_name}_access"
-  users = ["${aws_iam_user.s3.name}"]
-
-  lifecycle {
-    ignore_changes = [
-      "roles",
-    ]
-  }
-
+  name       = "${var.bucket_name}_access"
+  users      = ["${aws_iam_user.s3.name}"]
   policy_arn = "${aws_iam_policy.s3_access.arn}"
 }
