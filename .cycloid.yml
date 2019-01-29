@@ -5,6 +5,7 @@ description: 'This infrastructure will deploy a S3 bucket on AWS.'
 keywords:
   - 's3'
   - 'aws'
+  - 'iam'
 author: 'Cycloid'
 image: 'https://raw.githubusercontent.com/cycloid-community-catalog/infra-amazon-s3/master/icon.png'
 type: 'infra'
@@ -23,4 +24,4 @@ config:
   terraform:
     s3:
       path: 'terraform/s3.tf.sample'
-      destination: 'terraform/s3/($ environment $)/s3.tf'
+      destination: '($ project $)/terraform/($ environment $)/s3.tf'
