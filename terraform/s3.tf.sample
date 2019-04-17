@@ -10,10 +10,15 @@ module "s3" {
   project  = "${var.project}"
   env      = "${var.env}"
   customer = "${var.customer}"
-
   #####################################
 
-  bucket_name              = "<bucket name>" #only lowercase alphanumeric characters and hyphens allowed
-  #bucket_acl = "<acl private (default) or public>"
-  #versioning_enabled = "<enable object versioning>"
+  #. bucket_name (required):
+  #+ Name of the S3 bvcket to create. Only lowercase alphanumeric characters and hyphens allowed
+  bucket_name              = "<bucket name>"
+
+  #. bucket_acl (optional): private
+  #+ S3 Canned ACL : https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl
+
+  #. versioning_enabled (optional, bool): false
+  #+ Enable S3 bucket versionning
 }
