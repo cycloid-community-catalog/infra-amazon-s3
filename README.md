@@ -16,7 +16,7 @@ Create a Amazon S3 bucket and a dedicated user using Cycloid stacks format.
 
 In order to run this task, couple elements are required within the infrastructure:
 
-  * Having an S3 bucket to store Terraform remote states [Here](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html)
+  * Having an S3 bucket with versioning to store Terraform remote states [here](https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html)
 
 # Details
 
