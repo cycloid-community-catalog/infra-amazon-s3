@@ -1,6 +1,6 @@
 # stack-amazon-s3
 
-Create a Amazon S3 bucket and a dedicated user using Cycloid stacks format.
+Create an Amazon S3 bucket and a dedicated user using Cycloid stacks format.
 
 # Architecture
 
