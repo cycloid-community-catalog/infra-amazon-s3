@@ -20,5 +20,5 @@ module "s3" {
   #+ S3 Canned ACL : https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl
 
   #. versioning_enabled (optional, bool): false
-  #+ Enable S3 bucket versionning
+  #+ Enable S3 bucket versionning.
 }
