@@ -5,7 +5,7 @@ output "iam_s3_key" {
 
 output "iam_s3_secret" {
   value       = "${module.s3.iam_s3_secret}"
-  description = "IAM secret key dedicated to the S3 bucket access"
+  description = "IAM secret key dedicated to the S3 bucket access."
 }
 
 output "s3_id" {
