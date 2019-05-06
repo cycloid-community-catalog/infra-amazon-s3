@@ -30,7 +30,7 @@ terraform_storage_bucket_path: ($ project $)/($ environment $)
 #
 
 #. config_git_repository (required): git@github.com:MyUser/config-s3.git
-#+ Git repository url containing the config of the stack.
+#+ Git repository URL containing the config of the stack.
 config_git_repository: git@github.com:MyUser/config-s3.git
 
 #. config_git_branch (required): master
