@@ -10,5 +10,5 @@ output "iam_s3_secret" {
 
 output "s3_id" {
   value       = "${module.s3.s3_id}"
-  description = "S3 bucket name"
+  description = "S3 bucket name."
 }
