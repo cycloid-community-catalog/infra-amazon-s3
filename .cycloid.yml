@@ -6,9 +6,15 @@ keywords:
   - 's3'
   - 'aws'
   - 'iam'
+  - 'terraform'
 author: 'Cycloid'
 image: 'https://raw.githubusercontent.com/cycloid-community-catalog/infra-amazon-s3/master/icon.png'
 type: 'infra'
+technologies:
+  - technology: Amazon s3
+    version: n/a
+  - technology: terraform
+    version: n/a
 config:
   # Configuration of the CI pipeline
   pipeline:
