@@ -62,6 +62,7 @@ In order to run this task, couple elements are required within the infrastructur
 |---|---|:---:|:---:|:---:|
 |`bucket_acl`|S3 Canned ACL : https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl|`-`|`private`|`False`|
 |`bucket_name`|Name of the S3 bvcket to create. Only lowercase alphanumeric characters and hyphens allowed|`-`|``|`True`|
+|`extra_tags`|Dict of extra tags to add on aws resources. format { "foo" = "bar" }.|`-`|`{}`|`False`|
 |`versioning_enabled`|Enable S3 bucket versionning|`bool`|`false`|`False`|
 
 **Outputs**

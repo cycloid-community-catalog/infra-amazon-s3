@@ -12,13 +12,9 @@ resource "aws_s3_bucket" "s3" {
     enabled = var.versioning_enabled
   }
 
-  tags = {
-    Name       = "${var.customer}-${var.project}-s3-${var.env}"
-    client     = var.customer
-    env        = var.env
-    project    = var.project
-    cycloid.io = "true"
-  }
+  tags = merge(local.merged_tags, {
+    Name = "${var.customer}-${var.project}-s3-${var.env}"
+  })
 }
 
 #
