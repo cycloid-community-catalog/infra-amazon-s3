@@ -1,12 +1,15 @@
-variable "env" {}
+variable "env" {
+}
 
 variable "project" {
   default = "s3"
 }
 
-variable "customer" {}
+variable "customer" {
+}
 
-variable "bucket_name" {}
+variable "bucket_name" {
+}
 
 variable "bucket_acl" {
   default = "private"
@@ -15,3 +18,4 @@ variable "bucket_acl" {
 variable "versioning_enabled" {
   default = false
 }
+

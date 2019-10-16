@@ -5,11 +5,11 @@ module "s3" {
 
   #####################################
   # Do not modify the following lines #
-  source = "module-s3"
+  source = "./module-s3"
 
-  project  = "${var.project}"
-  env      = "${var.env}"
-  customer = "${var.customer}"
+  project  = var.project
+  env      = var.env
+  customer = var.customer
   #####################################
 
   #. bucket_name (required):
