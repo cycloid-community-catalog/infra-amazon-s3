@@ -59,7 +59,6 @@ resources:
 
 - name: git_stack-terraform
   type: git
-  check_every: 2m
   source:
     uri: https://github.com/cycloid-community-catalog/stack-amazon-s3
     branch: ((stack_git_branch))
@@ -67,7 +66,6 @@ resources:
 
 - name: git_config-terraform
   type: git
-  check_every: 2m
   source:
     uri: ((config_git_repository))
     branch: ((config_git_branch))
