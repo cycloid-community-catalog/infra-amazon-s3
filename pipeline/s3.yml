@@ -36,7 +36,7 @@ resources:
 - name: tfstate
   type: terraform
   source:
-    env_name: ((env))
+    env_name: ((project))-((env))
     backend_type: s3
     backend_config:
       bucket: ((terraform_storage_bucket_name))
@@ -97,7 +97,6 @@ jobs:
 
         - put: tfstate
           params:
-            env_name: ((project))-((env))
             plan_only: true
             terraform_source: merged-stack/
 
@@ -134,7 +133,6 @@ jobs:
 
         - put: tfstate
           params:
-            env_name: ((project))-((env))
             plan_run: true
             terraform_source: merged-stack/
 
@@ -162,7 +160,6 @@ jobs:
           - put: tfstate
             params:
               action: destroy
-              env_name: ((project))-((env))
               terraform_source: merged-stack/
             get_params:
               action: destroy
