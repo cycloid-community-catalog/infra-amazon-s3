@@ -5,20 +5,16 @@
 ###
 
 resource "aws_s3_bucket" "s3" {
-  bucket = "${var.bucket_name}"
-  acl    = "${var.bucket_acl}"
+  bucket = var.bucket_name
+  acl    = var.bucket_acl
 
   versioning {
-    enabled = "${var.versioning_enabled}"
+    enabled = var.versioning_enabled
   }
 
-  tags {
-    Name       = "${var.customer}-${var.project}-s3-${var.env}"
-    client     = "${var.customer}"
-    env        = "${var.env}"
-    project    = "${var.project}"
-    cycloid.io = "true"
-  }
+  tags = merge(local.merged_tags, {
+    Name = "${var.customer}-${var.project}-s3-${var.env}"
+  })
 }
 
 #
@@ -70,5 +66,6 @@ data "aws_iam_policy_document" "s3_access" {
 resource "aws_iam_policy" "s3_access" {
   name        = "s3_${var.bucket_name}_access"
   description = "Grant s3 access on bucket on ${aws_s3_bucket.s3.id}"
-  policy      = "${data.aws_iam_policy_document.s3_access.json}"
+  policy      = data.aws_iam_policy_document.s3_access.json
 }
+
