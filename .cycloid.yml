@@ -1,6 +1,7 @@
 # Configuration of the CI pipeline
 name: 'Amazon S3 Bucket'
 canonical: 'infra-amazon-s3'
+status: 'public'
 description: 'This infrastructure will deploy a S3 bucket on AWS.'
 keywords:
   - 's3'
