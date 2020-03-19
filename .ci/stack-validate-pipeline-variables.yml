@@ -37,13 +37,17 @@ pipeline_env_vars:
   USERNAME: ((cycloid_bot_account.login))
   PASSWORD: ((cycloid_bot_account.password))
   # TEMPLATE to use in the stack
-  PIPELINE_TEMPLATE: s3.yml
+  PIPELINE_TEMPLATE: pipeline.yml
   # VARIABLES to use to create the PIPELINE_TEMPLATE
   PIPELINE_VARIABLES: variables.sample.yml
   # Where to create the pipeline
   ORGANIZATION: cycloid-owl
+  # Which project to use for pipeline
+  PROJECT: ci-infra-amazon-s3
+  # Which environment to use for pipeline
+  ENVIRONMENT: master
   # Tmp name to create the pipeline
-  PIPELINE_NAME: ci-stack-infra-amazon-s3-master-validate
+  PIPELINE_NAME: ci-infra-amazon-s3-master-validate
 
 #. config_terraform_path (required): .ci/terraform
 #+ Path of Terraform files in the config git repository
@@ -66,7 +70,7 @@ env: master
 
 #. project (required): ($ project $)
 #+ Name of the project.
-project: ci-stack-infra-amazon-s3
+project: ci-infra-amazon-s3
 
 #. customer (required): ($ organization_canonical $)
 #+ Name of the Cycloid Organization, used as customer variable name.
